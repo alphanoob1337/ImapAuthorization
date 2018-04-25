@@ -1,0 +1,38 @@
+{
+    "name": "ImapAuthorization",
+    "type": "other",
+    "version": "0.1.0",
+    "license-name": "MIT",
+    "descriptionmsg": "imapauthorization-desc",
+    "author": "Alphanoob1337",
+    "requires": {
+		"MediaWiki": ">= 1.27.0",
+		"extensions": {
+		}
+    },
+    "AuthManagerAutoConfig": {
+        "primaryauth": {
+            "ImapAuthenticationProvider": {
+                "class": "ImapAuthenticationProvider"
+            }
+        }
+    },
+    "config": {
+        "ImapAuthorizationSmtpServerAddress": "localhost",
+        "ImapAuthorizationSmtpServerPort": 25,
+        "ImapAuthorizationImapServerAddress": "localhost",
+        "ImapAuthorizationImapServerPort": 143,
+        "ImapAuthorizationImapServerEnforceSsl": false,
+        "ImapAuthorizationImapServerEnforceTls": false,
+        "ImapAuthorizationImapServerVerifyCert": true
+	},
+    "MessagesDirs": {
+		"IMAP_Authorization": [
+			"i18n"
+		]
+    },
+    "AutoloadClasses": {
+		"ImapAuthenticationProvider": "ImapAuthenticationProvider.php"
+	},
+    "manifest_version": 1
+}

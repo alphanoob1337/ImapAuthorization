@@ -5,6 +5,7 @@
     "license-name": "MIT",
     "descriptionmsg": "imapauthorization-desc",
     "author": "Alphanoob1337",
+    "url": "https://www.mediawiki.org/wiki/Extension:ImapAuthorization",
     "requires": {
 		"MediaWiki": ">= 1.27.0",
 		"extensions": {
@@ -27,7 +28,7 @@
         "ImapAuthorizationImapServerVerifyCert": true
 	},
     "MessagesDirs": {
-		"IMAP_Authorization": [
+		"ImapAuthorization": [
 			"i18n"
 		]
     },

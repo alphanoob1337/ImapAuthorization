@@ -1,39 +1,37 @@
 {
-    "name": "ImapAuthorization",
-    "type": "other",
-    "version": "0.1.0",
-    "license-name": "MIT",
-    "descriptionmsg": "imapauthorization-desc",
-    "author": "Alphanoob1337",
-    "url": "https://www.mediawiki.org/wiki/Extension:ImapAuthorization",
-    "requires": {
-		"MediaWiki": ">= 1.27.0",
-		"extensions": {
-		}
-    },
-    "AuthManagerAutoConfig": {
-        "primaryauth": {
-            "ImapAuthenticationProvider": {
-                "class": "ImapAuthenticationProvider"
-            }
-        }
-    },
-    "config": {
-        "ImapAuthorizationSmtpServerAddress": "localhost",
-        "ImapAuthorizationSmtpServerPort": 25,
-        "ImapAuthorizationImapServerAddress": "localhost",
-        "ImapAuthorizationImapServerPort": 143,
-        "ImapAuthorizationImapServerEnforceSsl": false,
-        "ImapAuthorizationImapServerEnforceTls": false,
-        "ImapAuthorizationImapServerVerifyCert": true
+	"name": "ImapAuthorization",
+	"type": "other",
+	"version": "0.1.0",
+	"license-name": "MIT",
+	"descriptionmsg": "imapauthorization-desc",
+	"author": "Alphanoob1337",
+	"url": "https://www.mediawiki.org/wiki/Extension:ImapAuthorization",
+	"requires": {
+		"MediaWiki": ">= 1.27.0"
 	},
-    "MessagesDirs": {
+	"AuthManagerAutoConfig": {
+		"primaryauth": {
+			"ImapAuthenticationProvider": {
+				"class": "ImapAuthenticationProvider"
+			}
+		}
+	},
+	"config": {
+		"ImapAuthorizationSmtpServerAddress": "localhost",
+		"ImapAuthorizationSmtpServerPort": 25,
+		"ImapAuthorizationImapServerAddress": "localhost",
+		"ImapAuthorizationImapServerPort": 143,
+		"ImapAuthorizationImapServerEnforceSsl": false,
+		"ImapAuthorizationImapServerEnforceTls": false,
+		"ImapAuthorizationImapServerVerifyCert": true
+	},
+	"MessagesDirs": {
 		"ImapAuthorization": [
 			"i18n"
 		]
-    },
-    "AutoloadClasses": {
+	},
+	"AutoloadClasses": {
 		"ImapAuthenticationProvider": "ImapAuthenticationProvider.php"
 	},
-    "manifest_version": 1
+	"manifest_version": 1
 }

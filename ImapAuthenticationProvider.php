@@ -210,7 +210,7 @@ class ImapAuthenticationProvider extends AbstractPrimaryAuthenticationProvider  
             if ($mbox === false) {
                 return AuthenticationResponse::newAbstain();
             } else {
-                // Successfull check!
+                // Successful check!
                 imap_close($mbox);
                 return AuthenticationResponse::newPass( $username );
             }

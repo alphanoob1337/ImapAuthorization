@@ -69,7 +69,9 @@ class ImapAuthenticationProvider extends AbstractPrimaryAuthenticationProvider  
         $username = User::getCanonicalName( $username, 'usable' );
         
 		global $wgImapAuthorizationActive;
-        if ( $username === false || !$wgImapAuthorizationActive ) {
+		if ( !$wgImapAuthorizationActive ) {
+			return false;
+		} else if ( $username === false ) {
             return false;
         } else {
             global $wgImapAuthorizationSmtpServerAddress;
@@ -185,7 +187,9 @@ class ImapAuthenticationProvider extends AbstractPrimaryAuthenticationProvider  
         $username = User::getCanonicalName( $req->username, 'usable' );
 		
 		global $wgImapAuthorizationActive;
-        if ( $username === false || !$wgImapAuthorizationActive ) {
+		if ( !$wgImapAuthorizationActive ) {
+			return AuthenticationResponse::newAbstain();
+		} else if ( $username === false ) {
             return AuthenticationResponse::newAbstain();
         } else {
             // Start checking the credentials

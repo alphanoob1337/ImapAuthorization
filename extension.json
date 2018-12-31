@@ -8,8 +8,6 @@
     "url": "https://www.mediawiki.org/wiki/Extension:ImapAuthorization",
     "requires": {
 		"MediaWiki": ">= 1.27.0",
-		"extensions": {
-		}
     },
     "AuthManagerAutoConfig": {
         "primaryauth": {
@@ -28,13 +26,13 @@
         "ImapAuthorizationImapServerEnforceTls": false,
         "ImapAuthorizationImapServerVerifyCert": true
 	},
-    "MessagesDirs": {
+	"MessagesDirs": {
 		"ImapAuthorization": [
 			"i18n"
 		]
-    },
-    "AutoloadClasses": {
+	},
+	"AutoloadClasses": {
 		"ImapAuthenticationProvider": "ImapAuthenticationProvider.php"
 	},
-    "manifest_version": 1
+	"manifest_version": 1
 }

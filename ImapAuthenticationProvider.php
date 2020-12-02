@@ -214,10 +214,10 @@ class ImapAuthenticationProvider extends AbstractPrimaryAuthenticationProvider  
             }
             
             if ($wgImapAuthorizationAppendDomain) {
-			    $imap_username = $username.'@'.$wgImapAuthorizationAppendDomain;
-			} else {
-			    $imap_username = $username;
-			}
+	    	$imap_username = $username.'@'.$wgImapAuthorizationAppendDomain;
+	    } else {
+		$imap_username = $username;
+	    }
 
             // Opening the IMAP connection
             $mbox = imap_open($connstr, $imap_username, $req->password, OP_HALFOPEN);

@@ -198,6 +198,7 @@ class ImapAuthenticationProvider extends AbstractPrimaryAuthenticationProvider  
             global $wgImapAuthorizationImapServerEnforceSsl;
             global $wgImapAuthorizationImapServerEnforceTls;
             global $wgImapAuthorizationImapServerVerifyCert;
+            global $wgImapAuthorizationAppendDomain;
 
             $connstr = '{' . $wgImapAuthorizationImapServerAddress . ':' . $wgImapAuthorizationImapServerPort . '}/imap';
             if ($wgImapAuthorizationImapServerEnforceSsl) {
@@ -211,9 +212,15 @@ class ImapAuthenticationProvider extends AbstractPrimaryAuthenticationProvider  
             } else {
                 $connstr .= '/novalidate-cert';
             }
+            
+            if ($wgImapAuthorizationAppendDomain) {
+	    	$imap_username = $username.'@'.$wgImapAuthorizationAppendDomain;
+	    } else {
+		$imap_username = $username;
+	    }
 
             // Opening the IMAP connection
-            $mbox = imap_open($connstr, $username, $req->password, OP_HALFOPEN);
+            $mbox = imap_open($connstr, $imap_username, $req->password, OP_HALFOPEN);
             if ($mbox === false) {
                 return AuthenticationResponse::newAbstain();
             } else {
